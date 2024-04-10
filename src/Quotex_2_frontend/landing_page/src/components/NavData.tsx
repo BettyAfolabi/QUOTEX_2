@@ -15,8 +15,9 @@ function NavData() {
       <Stack
         spacing={2}
         sx={{
-          fontSize: "12px",
+          fontSize: "24px",
           marginRight: "2rem",
+          marginTop: "1rem",
           display: "flex",
           flexDirection: "row",
           "@media (max-width: 768px)": {
@@ -28,7 +29,12 @@ function NavData() {
           variant="text"
           href="#"
           color="inherit"
-          sx={{ textTransform: "none" }}
+          sx={{
+            textTransform: "none",
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
         >
           Database
         </Button>
@@ -36,7 +42,12 @@ function NavData() {
           variant="text"
           href="#"
           color="inherit"
-          sx={{ textTransform: "none" }}
+          sx={{
+            textTransform: "none",
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
         >
           Protocol
         </Button>
@@ -44,7 +55,12 @@ function NavData() {
           variant="text"
           href="#"
           color="inherit"
-          sx={{ textTransform: "none" }}
+          sx={{
+            textTransform: "none",
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
         >
           Stat
         </Button>
@@ -52,7 +68,12 @@ function NavData() {
           variant="text"
           href="#"
           color="inherit"
-          sx={{ textTransform: "none" }}
+          sx={{
+            textTransform: "none",
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
         >
           Community
         </Button>
@@ -60,16 +81,21 @@ function NavData() {
           variant="text"
           href="#"
           color="inherit"
-          sx={{ textTransform: "none" }}
+          sx={{
+            textTransform: "none",
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          }}
         >
           Help
         </Button>
-        <Stack direction="row" spacing={0}>
+        <Stack direction="row" justifyContent="center">
           <Box
             aria-label="logo"
             sx={{
               paddingTop: "5px",
-              paddingRight: "6px",
+              paddingRight: "12px",
               width: "10px",
               height: "10px",
             }}
@@ -98,8 +124,10 @@ function NavData() {
           size="small"
           sx={{
             backgroundColor: "#0300AB",
+            marginTop: "20px",
             paddingY: "9px",
             paddingX: "20px",
+            borderRadius: "12px",
           }}
         >
           Launch

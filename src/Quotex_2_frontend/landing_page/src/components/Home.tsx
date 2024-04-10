@@ -8,8 +8,11 @@ import {
   Typography,
   Drawer,
   IconButton,
+  Menu,
+  MenuItem,
 } from "@mui/material";
-import { KeyboardArrowDown, Menu } from "@mui/icons-material";
+import { KeyboardArrowDown } from "@mui/icons-material";
+import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 
 function Home() {
@@ -20,6 +23,9 @@ function Home() {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(e.currentTarget);
   };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <>
@@ -29,7 +35,6 @@ function Home() {
           color: "#fff",
           textAlign: "center",
           width: "100%",
-          backgroundImage: "url('Rectangle 55.png')",
         }}
       >
         {/* Begining of Navigation */}
@@ -76,14 +81,25 @@ function Home() {
                 aria-label="logo"
                 onClick={() => setIsDrawerOpen(true)}
               >
-                <Menu />
+                <MenuIcon />
               </IconButton>
               <Drawer
                 anchor="left"
                 open={isDrawerOpen}
                 onClose={() => setIsDrawerOpen(false)}
               >
-                <Box p={2} width="250px" textAlign="center" role="presentation">
+                <Box
+                  p={2}
+                  width="250px"
+                  textAlign="center"
+                  role="presentation"
+                  sx={{
+                    backgroundColor: "#05082B",
+                    color: "#fff",
+
+                    height: "100vh",
+                  }}
+                >
                   <NavData />
                 </Box>
               </Drawer>
@@ -112,7 +128,12 @@ function Home() {
                   variant="text"
                   href="#"
                   color="inherit"
-                  sx={{ textTransform: "none" }}
+                  sx={{
+                    textTransform: "none",
+                    "&:hover": {
+                      textDecoration: "underline",
+                    },
+                  }}
                 >
                   Database
                 </Button>
@@ -120,7 +141,12 @@ function Home() {
                   variant="text"
                   href="#"
                   color="inherit"
-                  sx={{ textTransform: "none" }}
+                  sx={{
+                    textTransform: "none",
+                    "&:hover": {
+                      textDecoration: "underline",
+                    },
+                  }}
                 >
                   Protocol
                 </Button>
@@ -128,7 +154,12 @@ function Home() {
                   variant="text"
                   href="#"
                   color="inherit"
-                  sx={{ textTransform: "none" }}
+                  sx={{
+                    textTransform: "none",
+                    "&:hover": {
+                      textDecoration: "underline",
+                    },
+                  }}
                 >
                   Stat
                 </Button>
@@ -136,15 +167,29 @@ function Home() {
                   variant="text"
                   href="#"
                   color="inherit"
-                  sx={{ textTransform: "none" }}
+                  sx={{
+                    textTransform: "none",
+                    "&:hover": {
+                      textDecoration: "underline",
+                    },
+                  }}
                 >
                   Community
                 </Button>
                 <Button
+                  id="help-button"
+                  onClick={handleClick}
+                  aria-control={open ? "help-menu" : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? "true" : undefined}
                   variant="text"
-                  href="#"
                   color="inherit"
-                  sx={{ textTransform: "none" }}
+                  sx={{
+                    textTransform: "none",
+                    "&:hover": {
+                      textDecoration: "underline",
+                    },
+                  }}
                 >
                   Help
                 </Button>
@@ -153,7 +198,7 @@ function Home() {
                     aria-label="logo"
                     sx={{
                       paddingTop: "5px",
-                      paddingRight: "6px",
+                      paddingRight: "12px",
                       width: "10px",
                       height: "10px",
                     }}
@@ -184,23 +229,37 @@ function Home() {
                     backgroundColor: "#0300AB",
                     paddingY: "9px",
                     paddingX: "20px",
+                    borderRadius: "12px",
                   }}
                 >
                   Launch
                 </Button>
               </Stack>
             </Stack>
+            <Menu
+              id="help-menu"
+              anchorEl={anchorEl}
+              open={open}
+              MenuListProps={{ "aria-labelledby": "help-button" }}
+              onClose={handleClose}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+            >
+              <MenuItem onClick={handleClose}>Documentation</MenuItem>
+              <MenuItem onClick={handleClose}>NFID</MenuItem>
+              <MenuItem onClick={handleClose}>EXchange Rate Canister</MenuItem>
+            </Menu>
           </Toolbar>
         </AppBar>
         {/* End of Navigation */}
 
-        <Stack
-          my={20}
-          sx={{
-            backgroundImage: "url('Home.png')",
-            backgroundSize: "cover",
-          }}
-        >
+        <Stack my={20}>
           <Typography
             sx={{
               fontSize: "60px",
@@ -237,6 +296,7 @@ function Home() {
               paddingX: "20px",
               margin: "auto",
               width: "160px",
+              borderRadius: "12px",
             }}
           >
             Launch

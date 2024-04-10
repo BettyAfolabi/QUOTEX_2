@@ -5,10 +5,10 @@ import { styled } from "@mui/material/styles";
 const StyledPaper = styled(Paper)({
   backgroundColor: "transparent",
   backgroundOpacity: "75%",
-  border: "#FFFFFF0D solid",
-  padding: "1.5rem",
+  border: "1px #FFFFFF0D solid",
+  padding: "1rem",
+  borderRadius: "18px",
   position: "relative",
-  borderRadius: "7px",
   color: "#fff",
   height: "150px",
   marginBottom: "3rem",

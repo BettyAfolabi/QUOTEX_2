@@ -20,6 +20,7 @@ const FooterContent = styled(Typography)({
 });
 
 function Footer() {
+  const year = new Date().getFullYear();
   return (
     <>
       <Divider />
@@ -30,6 +31,9 @@ function Footer() {
           marginY: "2rem",
           fontFamily: "Roboto, sans-serif",
           width: "100%",
+          "@media (max-width: 768px)": {
+            flexDirection: "column-reverse",
+          },
         }}
       >
         <Stack
@@ -39,6 +43,10 @@ function Footer() {
             justifyContent: "space-between",
             alignItems: "self-start",
             flexBasis: "50%",
+            "@media (max-width: 768px)": {
+              marginY: "2rem",
+              marginLeft: "1.5rem",
+            },
           }}
         >
           <Typography variant="h6" color="#FFFFFF">
@@ -61,7 +69,7 @@ function Footer() {
               <Twitter />
             </Stack>
             <Typography sx={{ color: "#B6B6B6", fontSize: "16px" }}>
-              © 2024 Quotex. All rights reserved.
+              {`© ${year} Quotex. All rights reserved.`}
             </Typography>
           </Stack>
         </Stack>

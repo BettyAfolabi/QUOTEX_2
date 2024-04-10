@@ -7,10 +7,12 @@ const StyledPaper = styled(Paper)({
   gap: "2rem",
   marginBottom: "1rem",
   width: "400px",
+  height: "70px",
   backgroundColor: "transparent",
   color: "#fff",
   blackgrounOpacity: "90%",
   border: "1px #FFFFFF0D solid",
+  borderRadius: "18px",
   textAlign: "start",
   padding: "10px",
 });
@@ -80,30 +82,94 @@ function Action() {
             <img
               src="usericon.png"
               alt="user's icon"
-              style={{ width: "80px", height: "80px", color: "#FFFFFF05" }}
+              style={{
+                width: "50px",
+                height: "50px",
+                color: "#FFFFFF05",
+                marginTop: "10px",
+              }}
             />
-            <Stack>
-              <Typography>Create Your Account</Typography>
-              <Typography sx={{ color: "#B6B6B6", fontSize: "16px" }}>
+            <Stack
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <Typography sx={{ fontSize: "18px" }}>
+                Create Your Account
+              </Typography>
+              <Typography sx={{ color: "#B6B6B6", fontSize: "14px" }}>
                 Your account and personal identity are guaranteed safe.
               </Typography>
             </Stack>
           </StyledPaper>
           <StyledPaper
             elevation={4}
-            sx={{ marginLeft: "2rem", marginY: "20px" }}
+            sx={{
+              marginLeft: "2rem",
+              marginY: "20px",
+              "@media (max-width: 768px)": {
+                marginLeft: "0",
+              },
+            }}
           >
-            <img src="walleticon.png" alt="Wallet's icon" />
-            <Stack>
-              <Typography>Fund Your wallet</Typography>
-              <Typography>Fund your wallet to start transactions.</Typography>
+            <img
+              src="walleticon.png"
+              alt="Wallet's icon"
+              style={{
+                width: "50px",
+                height: "50px",
+                color: "#FFFFFF05",
+                marginTop: "10px",
+              }}
+            />
+            <Stack
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                paddingY: "10px",
+              }}
+            >
+              <Typography sx={{ fontSize: "18px" }}>
+                Fund Your wallet
+              </Typography>
+              <Typography sx={{ color: "#B6B6B6", fontSize: "14px" }}>
+                Fund your wallet to start transactions.
+              </Typography>
             </Stack>
           </StyledPaper>
-          <StyledPaper elevation={4} sx={{ marginLeft: "4rem" }}>
-            <img src="portfolioicon.png" alt="Portfolio's icon" />
-            <Stack>
-              <Typography>Start Building Your Portfolio</Typography>
-              <Typography>
+          <StyledPaper
+            elevation={4}
+            sx={{
+              marginLeft: "4rem",
+              "@media (max-width: 768px)": {
+                marginLeft: "0",
+              },
+            }}
+          >
+            <img
+              src="portfolioicon.png"
+              alt="Portfolio's icon"
+              style={{
+                width: "50px",
+                height: "50px",
+                color: "#FFFFFF05",
+                marginTop: "10px",
+              }}
+            />
+            <Stack
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <Typography sx={{ fontSize: "18px" }}>
+                Start Building Your Portfolio
+              </Typography>
+              <Typography sx={{ color: "#B6B6B6", fontSize: "14px" }}>
                 Buy and sell popular currencies and keep track of them.
               </Typography>
             </Stack>

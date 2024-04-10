@@ -1,3 +1,9 @@
 :root {
     background-color: #05082B;
+    background-image: "url('/Homebg.png')";
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }

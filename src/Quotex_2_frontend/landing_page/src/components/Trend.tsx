@@ -4,9 +4,9 @@ import { styled } from "@mui/material/styles";
 const StyledPaper = styled(Paper)({
   backgroundColor: "transparent",
   backgroundOpacity: "75%",
-  border: "#FFFFFF0D solid",
+  border: "1px #FFFFFF0D solid",
   padding: "1rem",
-  borderRadius: "7px",
+  borderRadius: "18px",
   color: "#fff",
   height: "150px",
   "@media (max-width: 768px)": {
@@ -66,19 +66,19 @@ function Trend() {
           my={4}
           columnGap={3}
           justifyContent="center"
-          rowSpacing={3}
+          sx={{ rowGap: "4rem" }}
         >
           {/* First card */}
           <Grid
             item
-            width="300px"
+            width="270px"
             sx={{
               "@media (max-width: 768px)": {
-                width: "400px",
+                width: "370px",
               },
             }}
           >
-            <StyledPaper elevation={8}>
+            <StyledPaper elevation={6}>
               <RowStack mb={2}>
                 <Stack direction="row">
                   <img
@@ -109,14 +109,14 @@ function Trend() {
           {/* Second card */}
           <Grid
             item
-            width="300px"
+            width="270px"
             sx={{
               "@media (max-width: 768px)": {
-                width: "400px",
+                width: "370px",
               },
             }}
           >
-            <StyledPaper elevation={8}>
+            <StyledPaper elevation={6}>
               <RowStack mb={2}>
                 <Stack direction="row">
                   <img
@@ -153,14 +153,14 @@ function Trend() {
           {/* Third card */}
           <Grid
             item
-            width="300px"
+            width="270px"
             sx={{
               "@media (max-width: 768px)": {
-                width: "400px",
+                width: "370px",
               },
             }}
           >
-            <StyledPaper elevation={8}>
+            <StyledPaper elevation={6}>
               <RowStack mb={2}>
                 <Stack direction="row">
                   <img
@@ -192,14 +192,14 @@ function Trend() {
 
           <Grid
             item
-            width="300px"
+            width="270px"
             sx={{
               "@media (max-width: 768px)": {
-                width: "400px",
+                width: "370px",
               },
             }}
           >
-            <StyledPaper elevation={8}>
+            <StyledPaper elevation={6}>
               <RowStack mb={2}>
                 <Stack direction="row">
                   <img

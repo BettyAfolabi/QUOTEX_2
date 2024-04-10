@@ -1,5 +1,5 @@
 import "./App.css";
-import { Stack, Container } from "@mui/material";
+import { Stack } from "@mui/material";
 import Home from "./components/Home";
 import Trend from "./components/Trend";
 import Features from "./components/Features";
@@ -8,17 +8,27 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <>
-      <Container maxWidth="xl">
-        <Stack sx={{ fontFamily: "Raleway, sans-serif" }}>
-          <Home />
+    <Stack
+      sx={{
+        backgroundImage: "url('/Homebg.png')",
+        backgroundSize: "center",
+      }}
+    >
+      <Stack
+        sx={{
+          fontFamily: "Raleway, sans-serif",
+          marginX: "1.5rem",
+        }}
+      >
+        <Home />
+        <Stack sx={{ backgroundImage: "url('/Topographic.png')" }}>
           <Trend />
           <Features />
           <Action />
           <Footer />
         </Stack>
-      </Container>
-    </>
+      </Stack>
+    </Stack>
   );
 }
 
